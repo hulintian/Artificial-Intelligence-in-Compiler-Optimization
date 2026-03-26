@@ -32,3 +32,28 @@
       - 做通用、有用的自动调优框架，需要支持尽可能多的特性
     - 在优化空间之后要关心的是生成的代码
       - cost model：分析性的、数据驱动的。最准确的cost model是在目标平台上跑的
+
+> 需要了解的背景：到底在优化啥？RIPOC到底是啥？拆开一个黑盒子看看。
+
+- 现有的工作的不足
+  - `BaCO`认为`autotuner`要支持的特性：
+    - RIOC
+    - Perm
+    - Hidden
+    - Know
+    > RIOC是优化空间里的，Perm是 permutation，合在一起就是上面的RIPOC。从Tabel 1里看很少Framework支持Perm的
+
+![](imgs/frameworks.png)
+
+- `BaCO`的工作：
+  - 不用用户提供代价模型，采用从运行成的优化代码中学习
+  > 怎么个学习法？
+  1. 支持所有RIPOC特性
+  2. 隐藏约束、新编译后端易集成
+  3. 采用chain-of-tree技术在Bayesian优化上，便于在稀疏搜索空间优化
+  > 什么是 Chain of tree ? 把所有合法配置预选计算好，形成一个合法的配置
+  4. 在三个不同编译框架上用Autotuning
+
+## background: 现代自动调优的复杂性
+
+> 有哪些复杂性？哪些框架我手头上的设备能够跑一跑？
