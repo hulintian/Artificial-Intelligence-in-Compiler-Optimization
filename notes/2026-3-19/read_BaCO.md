@@ -57,3 +57,17 @@
 ## background: 现代自动调优的复杂性
 
 > 有哪些复杂性？哪些框架我手头上的设备能够跑一跑？
+>
+> TACO、RISE&ELEVATE、HPVM2FPGA?  
+
+#### TACO
+[TACO](https://github.com/tensor-compiler/taco)
+
+- 强项：给大量稀疏张量格式生成代码
+
+#### RISE
+
+[RISE](https://rise-lang.org/)
+
+## BaCO design
+
